@@ -15,8 +15,7 @@ import {
   SidebarHeader,
   SidebarMenu,
   SidebarMenuItem,
-  SidebarMenuLabel,
-  SidebarMenuLink,
+  SidebarMenuButton,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
 
@@ -40,63 +39,63 @@ export function DashboardSidebar() {
       </SidebarHeader>
       <SidebarContent>
         <SidebarMenu>
-          <SidebarMenuLabel>Main</SidebarMenuLabel>
-          <SidebarMenuItem active={isActive("/dashboard")}>
-            <SidebarMenuLink asChild>
+          <div className="text-xs font-medium text-sidebar-foreground/70 px-2 mb-2">Main</div>
+          <SidebarMenuItem>
+            <SidebarMenuButton asChild isActive={isActive("/dashboard")}>
               <Link to="/dashboard">
                 <Home className="h-4 w-4" />
                 <span>Dashboard</span>
               </Link>
-            </SidebarMenuLink>
+            </SidebarMenuButton>
           </SidebarMenuItem>
           
-          <SidebarMenuItem active={isActive("/hives")}>
-            <SidebarMenuLink asChild>
+          <SidebarMenuItem>
+            <SidebarMenuButton asChild isActive={isActive("/hives")}>
               <Link to="/hives">
                 <Box className="h-4 w-4" />
                 <span>Hives</span>
               </Link>
-            </SidebarMenuLink>
+            </SidebarMenuButton>
           </SidebarMenuItem>
           
-          <SidebarMenuItem active={isActive("/analytics")}>
-            <SidebarMenuLink asChild>
+          <SidebarMenuItem>
+            <SidebarMenuButton asChild isActive={isActive("/analytics")}>
               <Link to="/analytics">
                 <BarChart3 className="h-4 w-4" />
                 <span>Analytics</span>
               </Link>
-            </SidebarMenuLink>
+            </SidebarMenuButton>
           </SidebarMenuItem>
           
-          <SidebarMenuLabel>Account</SidebarMenuLabel>
-          <SidebarMenuItem active={isActive("/notifications")}>
-            <SidebarMenuLink asChild>
+          <div className="text-xs font-medium text-sidebar-foreground/70 px-2 mb-2 mt-6">Account</div>
+          <SidebarMenuItem>
+            <SidebarMenuButton asChild isActive={isActive("/notifications")}>
               <Link to="/notifications">
                 <Bell className="h-4 w-4" />
                 <span>Notifications</span>
               </Link>
-            </SidebarMenuLink>
+            </SidebarMenuButton>
           </SidebarMenuItem>
           
-          <SidebarMenuItem active={isActive("/settings")}>
-            <SidebarMenuLink asChild>
+          <SidebarMenuItem>
+            <SidebarMenuButton asChild isActive={isActive("/settings")}>
               <Link to="/settings">
                 <Settings className="h-4 w-4" />
                 <span>Settings</span>
               </Link>
-            </SidebarMenuLink>
+            </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarContent>
       <SidebarFooter>
         <SidebarMenu>
           <SidebarMenuItem>
-            <SidebarMenuLink asChild>
+            <SidebarMenuButton asChild>
               <Link to="/help">
                 <HelpCircle className="h-4 w-4" />
                 <span>Help & Support</span>
               </Link>
-            </SidebarMenuLink>
+            </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarFooter>
