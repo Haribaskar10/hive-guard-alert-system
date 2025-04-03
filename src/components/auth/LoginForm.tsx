@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -15,6 +15,7 @@ import { useToast } from "@/hooks/use-toast";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
+import { Eye, EyeOff, LogIn } from "lucide-react";
 
 const formSchema = z.object({
   email: z.string().email({ message: "Please enter a valid email address" }),
@@ -24,6 +25,8 @@ const formSchema = z.object({
 export function LoginForm() {
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -36,14 +39,36 @@ export function LoginForm() {
   function onSubmit(values: z.infer<typeof formSchema>) {
     setIsLoading(true);
     
-    // Simulate login request
+    // Simulate login request - in a real app, this would be an API call
     setTimeout(() => {
       console.log("Login values:", values);
-      setIsLoading(false);
-      toast({
-        title: "Success!",
-        description: "You've successfully logged in.",
-      });
+      
+      // For demo purposes, check if this is one of our test accounts
+      if (values.email === "test@beepulse.com" && values.password === "password123") {
+        // Store auth status in localStorage
+        localStorage.setItem("isLoggedIn", "true");
+        localStorage.setItem("userData", JSON.stringify({
+          name: "Rajesh Kumar",
+          email: values.email,
+          role: "Beekeeper"
+        }));
+        
+        setIsLoading(false);
+        toast({
+          title: "Login successful!",
+          description: "Welcome back to BeePulse.",
+        });
+        
+        // Navigate to dashboard after successful login
+        navigate("/dashboard");
+      } else {
+        setIsLoading(false);
+        toast({
+          title: "Login failed",
+          description: "Invalid email or password. Please try again.",
+          variant: "destructive",
+        });
+      }
     }, 1500);
   }
 
@@ -90,13 +115,28 @@ export function LoginForm() {
                     Forgot password?
                   </Link>
                 </div>
-                <FormControl>
-                  <Input 
-                    placeholder="••••••••" 
-                    type="password" 
-                    {...field} 
-                  />
-                </FormControl>
+                <div className="relative">
+                  <FormControl>
+                    <Input 
+                      placeholder="••••••••" 
+                      type={showPassword ? "text" : "password"}
+                      {...field} 
+                    />
+                  </FormControl>
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    size="icon"
+                    className="absolute right-0 top-0 h-full px-3"
+                    onClick={() => setShowPassword(!showPassword)}
+                  >
+                    {showPassword ? (
+                      <EyeOff className="h-4 w-4" />
+                    ) : (
+                      <Eye className="h-4 w-4" />
+                    )}
+                  </Button>
+                </div>
                 <FormMessage />
               </FormItem>
             )}
@@ -107,7 +147,13 @@ export function LoginForm() {
             className="w-full" 
             disabled={isLoading}
           >
-            {isLoading ? "Logging in..." : "Log in"}
+            {isLoading ? (
+              "Logging in..."
+            ) : (
+              <>
+                <LogIn className="mr-2 h-4 w-4" /> Log in
+              </>
+            )}
           </Button>
         </form>
       </Form>
@@ -135,6 +181,12 @@ export function LoginForm() {
         <Link to="/signup" className="font-medium text-honey-600 hover:underline">
           Sign up
         </Link>
+      </div>
+      
+      <div className="text-center text-xs text-muted-foreground">
+        <p>Demo credentials:</p>
+        <p>Email: test@beepulse.com</p>
+        <p>Password: password123</p>
       </div>
     </div>
   );

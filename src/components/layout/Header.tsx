@@ -1,8 +1,8 @@
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Bell, Settings, User } from "lucide-react";
-import { useState } from "react";
+import { Bell, LogOut, Settings, User } from "lucide-react";
+import { useState, useEffect } from "react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -16,21 +16,36 @@ import { useToast } from "@/hooks/use-toast";
 export function Header() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const { toast } = useToast();
+  const navigate = useNavigate();
+  const [userData, setUserData] = useState<{ name?: string; email?: string } | null>(null);
+
+  // Check login status from localStorage on component mount
+  useEffect(() => {
+    const loginStatus = localStorage.getItem("isLoggedIn") === "true";
+    const storedUserData = localStorage.getItem("userData");
+    
+    setIsLoggedIn(loginStatus);
+    if (storedUserData) {
+      try {
+        setUserData(JSON.parse(storedUserData));
+      } catch (e) {
+        console.error("Failed to parse user data");
+      }
+    }
+  }, []);
 
   const handleLogout = () => {
+    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("userData");
     setIsLoggedIn(false);
+    setUserData(null);
+    
     toast({
       title: "Logged out",
       description: "You've been successfully logged out."
     });
-  };
-
-  const handleLogin = () => {
-    setIsLoggedIn(true);
-    toast({
-      title: "Welcome back!",
-      description: "You've been successfully logged in."
-    });
+    
+    navigate("/");
   };
 
   return (
@@ -71,7 +86,7 @@ export function Header() {
           {!isLoggedIn ? (
             <>
               <Button variant="ghost" asChild>
-                <Link to="/login" onClick={handleLogin}>Log in</Link>
+                <Link to="/login">Log in</Link>
               </Button>
               <Button asChild>
                 <Link to="/signup">Sign up</Link>
@@ -114,7 +129,12 @@ export function Header() {
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end">
-                  <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                  <DropdownMenuLabel>
+                    {userData?.name || "My Account"}
+                    {userData?.email && (
+                      <p className="text-xs text-muted-foreground">{userData.email}</p>
+                    )}
+                  </DropdownMenuLabel>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem asChild>
                     <Link to="/dashboard">Dashboard</Link>
@@ -124,7 +144,7 @@ export function Header() {
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem onClick={handleLogout}>
-                    Logout
+                    <LogOut className="h-4 w-4 mr-2" /> Logout
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
