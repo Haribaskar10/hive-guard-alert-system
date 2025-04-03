@@ -90,10 +90,10 @@ export function DashboardSidebar() {
       <SidebarFooter>
         <SidebarMenu>
           <SidebarMenuItem>
-            <SidebarMenuButton asChild>
-              <Link to="/help">
+            <SidebarMenuButton asChild isActive={isActive("/support")}>
+              <Link to="/support">
                 <HelpCircle className="h-4 w-4" />
-                <span>Help & Support</span>
+                <span>Support</span>
               </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>
