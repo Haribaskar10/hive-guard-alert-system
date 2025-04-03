@@ -7,51 +7,51 @@ import { Plus } from "lucide-react";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { AddHiveForm } from "@/components/dashboard/AddHiveForm";
 
-// Sample hive data
+// Sample hive data with the format expected by HiveCard
 const sampleHives = [
   {
     id: "1",
     name: "Garden Hive",
-    location: "Bangalore Garden",
-    status: "healthy",
-    lastUpdate: new Date(Date.now() - 5 * 60000),
-    riskLevel: "low",
-    temperature: 35.2,
-    humidity: 42,
-    weight: 22.5,
+    location: "Mumbai Garden",
+    lastReading: "5 minutes ago",
+    swarmRisk: "low" as const,
+    activityData: Array.from({ length: 12 }, (_, i) => ({
+      time: `${i}:00`,
+      value: 65 + Math.floor(Math.random() * 10),
+    })),
   },
   {
     id: "2",
     name: "Orchard Hive",
     location: "Delhi Farms",
-    status: "warning",
-    lastUpdate: new Date(Date.now() - 2 * 60000),
-    riskLevel: "high",
-    temperature: 38.7,
-    humidity: 28,
-    weight: 18.3,
+    lastReading: "2 minutes ago",
+    swarmRisk: "high" as const,
+    activityData: Array.from({ length: 12 }, (_, i) => ({
+      time: `${i}:00`,
+      value: 80 + Math.floor(Math.random() * 15),
+    })),
   },
   {
     id: "3",
     name: "Meadow Hive",
-    location: "Mumbai Park",
-    status: "attention",
-    lastUpdate: new Date(Date.now() - 8 * 60000),
-    riskLevel: "medium",
-    temperature: 36.8,
-    humidity: 35,
-    weight: 20.1,
+    location: "Kolkata Park",
+    lastReading: "8 minutes ago",
+    swarmRisk: "medium" as const,
+    activityData: Array.from({ length: 12 }, (_, i) => ({
+      time: `${i}:00`,
+      value: 70 + Math.floor(Math.random() * 12),
+    })),
   },
   {
     id: "4",
     name: "Rooftop Hive",
     location: "Chennai Building",
-    status: "healthy",
-    lastUpdate: new Date(Date.now() - 15 * 60000),
-    riskLevel: "low",
-    temperature: 34.9,
-    humidity: 45,
-    weight: 23.7,
+    lastReading: "15 minutes ago",
+    swarmRisk: "low" as const,
+    activityData: Array.from({ length: 12 }, (_, i) => ({
+      time: `${i}:00`,
+      value: 68 + Math.floor(Math.random() * 8),
+    })),
   },
 ];
 
@@ -59,8 +59,21 @@ export default function Hives() {
   const [hives, setHives] = useState(sampleHives);
   const [openDialog, setOpenDialog] = useState(false);
 
-  const addHive = (newHive: any) => {
-    setHives([...hives, { ...newHive, id: `${hives.length + 1}` }]);
+  const addHive = (newHiveData: any) => {
+    // Create a new hive with the correct structure expected by HiveCard
+    const newHive = {
+      id: `${hives.length + 1}`,
+      name: newHiveData.name,
+      location: newHiveData.location,
+      lastReading: "Just now",
+      swarmRisk: "low" as const,
+      activityData: Array.from({ length: 12 }, (_, i) => ({
+        time: `${i}:00`,
+        value: 65 + Math.floor(Math.random() * 10),
+      })),
+    };
+    
+    setHives([...hives, newHive]);
     setOpenDialog(false);
   };
 

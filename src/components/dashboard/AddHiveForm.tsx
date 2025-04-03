@@ -32,7 +32,11 @@ const formSchema = z.object({
   sensorId: z.string().min(4, { message: "Sensor ID must be at least 4 characters" }),
 });
 
-export function AddHiveForm() {
+interface AddHiveFormProps {
+  onSubmit?: (values: z.infer<typeof formSchema>) => void;
+}
+
+export function AddHiveForm({ onSubmit }: AddHiveFormProps) {
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
   const [open, setOpen] = useState(false);
@@ -46,7 +50,7 @@ export function AddHiveForm() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  function handleSubmit(values: z.infer<typeof formSchema>) {
     setIsLoading(true);
     
     // Simulate API call
@@ -59,6 +63,11 @@ export function AddHiveForm() {
         title: "Hive added",
         description: `${values.name} has been successfully added.`,
       });
+      
+      // Call the onSubmit prop if provided
+      if (onSubmit) {
+        onSubmit(values);
+      }
     }, 1500);
   }
 
@@ -79,7 +88,7 @@ export function AddHiveForm() {
         </DialogHeader>
         
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+          <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-4">
             <FormField
               control={form.control}
               name="name"
