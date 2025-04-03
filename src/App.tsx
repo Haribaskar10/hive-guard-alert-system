@@ -11,6 +11,12 @@ import Dashboard from "./pages/Dashboard";
 import HiveDetail from "./pages/HiveDetail";
 import Settings from "./pages/Settings";
 import NotFound from "./pages/NotFound";
+import Hives from "./pages/Hives";
+import Analytics from "./pages/Analytics";
+import Notifications from "./pages/Notifications";
+import Help from "./pages/Help";
+import Terms from "./pages/Terms";
+import Privacy from "./pages/Privacy";
 
 const queryClient = new QueryClient();
 
@@ -25,8 +31,14 @@ const App = () => (
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/hives" element={<Hives />} />
           <Route path="/hives/:id" element={<HiveDetail />} />
+          <Route path="/analytics" element={<Analytics />} />
+          <Route path="/notifications" element={<Notifications />} />
           <Route path="/settings" element={<Settings />} />
+          <Route path="/help" element={<Help />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/privacy" element={<Privacy />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
