@@ -6,6 +6,9 @@ import {
   Settings,
   HelpCircle,
   Box,
+  Headphones,
+  Brain,
+  AlertTriangle,
 } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import {
@@ -63,6 +66,35 @@ export function DashboardSidebar() {
               <Link to="/analytics">
                 <BarChart3 className="h-4 w-4" />
                 <span>Analytics</span>
+              </Link>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+          
+          <div className="text-xs font-medium text-sidebar-foreground/70 px-2 mb-2 mt-6">Features</div>
+          
+          <SidebarMenuItem>
+            <SidebarMenuButton asChild isActive={isActive("/acoustic-monitoring")}>
+              <Link to="/acoustic-monitoring">
+                <Headphones className="h-4 w-4" />
+                <span>Acoustic Monitoring</span>
+              </Link>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+          
+          <SidebarMenuItem>
+            <SidebarMenuButton asChild isActive={isActive("/ai-predictions")}>
+              <Link to="/ai-predictions">
+                <Brain className="h-4 w-4" />
+                <span>AI Predictions</span>
+              </Link>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+          
+          <SidebarMenuItem>
+            <SidebarMenuButton asChild isActive={isActive("/instant-alerts")}>
+              <Link to="/instant-alerts">
+                <AlertTriangle className="h-4 w-4" />
+                <span>Instant Alerts</span>
               </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>
