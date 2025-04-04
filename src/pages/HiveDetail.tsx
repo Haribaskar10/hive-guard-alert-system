@@ -1,4 +1,3 @@
-
 import { useParams } from "react-router-dom";
 import { DashboardLayout } from "@/components/layout/DashboardLayout";
 import { Badge } from "@/components/ui/badge";
@@ -49,6 +48,19 @@ const hiveData = {
     installDate: "May 23, 2023",
     lastMaintenance: "September 8, 2023",
   },
+  "hive-4": {
+    id: "hive-4",
+    name: "Rooftop Hive",
+    location: "Chennai Building",
+    sensorId: "BP-SEN-1004",
+    lastReading: "15 minutes ago",
+    swarmRisk: "low",
+    temperature: "36°C",
+    humidity: "42%",
+    activity: "Normal",
+    installDate: "May 25, 2023",
+    lastMaintenance: "September 10, 2023",
+  },
 };
 
 const getRiskClass = (risk: string) => {
@@ -65,8 +77,10 @@ const getRiskClass = (risk: string) => {
 };
 
 export default function HiveDetail() {
-  const { id = "hive-1" } = useParams();
-  const hive = hiveData[id as keyof typeof hiveData] || hiveData["hive-1"];
+  const { id } = useParams<{ id: string }>();
+  
+  // Check if the hive exists in our data, if not use hive-1 as default
+  const hive = id && hiveData[id] ? hiveData[id] : hiveData["hive-1"];
   
   return (
     <DashboardLayout>
@@ -74,7 +88,7 @@ export default function HiveDetail() {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <div>
             <div className="flex items-center gap-2 mb-2">
-              <Link to="/dashboard">
+              <Link to="/hives">
                 <Button variant="ghost" size="sm" className="h-8 gap-1">
                   <ArrowLeft className="h-4 w-4" />
                   Back
