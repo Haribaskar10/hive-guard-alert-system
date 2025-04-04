@@ -103,7 +103,7 @@ export default function Index() {
                 potential swarming behavior before it happens.
               </p>
               <div className="mt-auto pt-4">
-                <Link to="/features" className="text-honey-600 hover:underline font-medium inline-flex items-center">
+                <Link to="/acoustic-monitoring" className="text-honey-600 hover:underline font-medium inline-flex items-center">
                   Learn more
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -122,7 +122,7 @@ export default function Index() {
                 data to predict swarm likelihood with high accuracy.
               </p>
               <div className="mt-auto pt-4">
-                <Link to="/features" className="text-honey-600 hover:underline font-medium inline-flex items-center">
+                <Link to="/ai-predictions" className="text-honey-600 hover:underline font-medium inline-flex items-center">
                   Learn more
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -141,7 +141,7 @@ export default function Index() {
                 detects increased swarm risk in your hives.
               </p>
               <div className="mt-auto pt-4">
-                <Link to="/features" className="text-honey-600 hover:underline font-medium inline-flex items-center">
+                <Link to="/instant-alerts" className="text-honey-600 hover:underline font-medium inline-flex items-center">
                   Learn more
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
