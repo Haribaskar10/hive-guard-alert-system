@@ -1,7 +1,7 @@
 
 import { DashboardLayout } from "@/components/layout/DashboardLayout";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Headphones, Mic, WaveformCircle, Volume2, Speaker } from "lucide-react";
+import { Headphones, Mic, Waveform, Volume2, Speaker } from "lucide-react";
 
 export default function AcousticMonitoring() {
   return (
@@ -20,7 +20,7 @@ export default function AcousticMonitoring() {
           <Card className="col-span-1 lg:col-span-3">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <WaveformCircle className="h-5 w-5" />
+                <Waveform className="h-5 w-5" />
                 How Acoustic Monitoring Works
               </CardTitle>
               <CardDescription>
@@ -101,7 +101,7 @@ export default function AcousticMonitoring() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="flex flex-col items-center p-6 border rounded-lg text-center gap-4">
                 <div className="h-16 w-16 rounded-full bg-honey-100 flex items-center justify-center">
-                  <WaveformCircle className="h-8 w-8 text-honey-600" />
+                  <Waveform className="h-8 w-8 text-honey-600" />
                 </div>
                 <h3 className="font-medium">Sound Capture</h3>
                 <p className="text-sm text-muted-foreground">
