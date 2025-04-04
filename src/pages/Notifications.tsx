@@ -6,6 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import { AlertTriangle, Bell, Check, Info, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 // Sample notifications data
 const sampleNotifications = [
@@ -16,7 +17,7 @@ const sampleNotifications = [
     message: "Orchard Hive shows signs of imminent swarming. Take action now.",
     timestamp: new Date(Date.now() - 30 * 60000),
     read: false,
-    hiveId: "2",
+    hiveId: "hive-2",
   },
   {
     id: "2",
@@ -25,7 +26,7 @@ const sampleNotifications = [
     message: "Meadow Hive temperature increased by 3°C in the last hour.",
     timestamp: new Date(Date.now() - 3 * 3600000),
     read: false,
-    hiveId: "3",
+    hiveId: "hive-3",
   },
   {
     id: "3",
@@ -42,7 +43,7 @@ const sampleNotifications = [
     message: "Rooftop Hive has been successfully connected to your account.",
     timestamp: new Date(Date.now() - 5 * 86400000),
     read: true,
-    hiveId: "4",
+    hiveId: "hive-4",
   },
 ];
 
@@ -162,8 +163,13 @@ export default function Notifications() {
                                 {formatTimestamp(notification.timestamp)}
                               </span>
                               {notification.hiveId && (
-                                <Button variant="link" size="sm" className="p-0 h-auto text-xs text-honey-600">
-                                  View Hive
+                                <Button 
+                                  variant="link" 
+                                  size="sm" 
+                                  className="p-0 h-auto text-xs text-honey-600"
+                                  asChild
+                                >
+                                  <Link to={`/hives/${notification.hiveId}`}>View Hive</Link>
                                 </Button>
                               )}
                               {!notification.read && (
