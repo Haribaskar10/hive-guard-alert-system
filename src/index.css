@@ -91,7 +91,7 @@
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-honey-100;
   }
 
   body {
