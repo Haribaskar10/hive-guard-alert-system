@@ -1,234 +1,195 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 46 100% 97%;
-    --foreground: 32 90% 16%;
+    /* Neutral, black, dirty yellow */
+    --background: 48 36% 98%;
+    --foreground: 240 8% 10%; 
 
-    --card: 46 100% 98%;
-    --card-foreground: 32 90% 16%;
+    --card: 48 36% 98%;
+    --card-foreground: 240 8% 10%;
 
-    --popover: 46 100% 98%;
-    --popover-foreground: 32 90% 16%;
+    --popover: 48 36% 98%;
+    --popover-foreground: 240 8% 10%;
 
-    --primary: 44 98% 53%;
-    --primary-foreground: 32 90% 12%;
+    --primary: 48 98% 54%;           /* dirty yellow (FFD338) */
+    --primary-foreground: 240 8% 10%;
 
-    --secondary: 46 92% 90%;
-    --secondary-foreground: 39 36% 33%;
+    --secondary: 225 10% 19%;        /* dark grey (343A40) */
+    --secondary-foreground: 48 98% 54%;
 
-    --muted: 46 10% 94%;
-    --muted-foreground: 46 18% 44%;
+    --muted: 210 10% 92%;            /* light gray */
+    --muted-foreground: 225 10% 29%; /* mid gray */
 
-    --accent: 44 88% 57%;
-    --accent-foreground: 32 90% 12%;
+    --accent: 44 64% 82%;            /* warm yellow tint */
+    --accent-foreground: 240 8% 10%;
 
-    --destructive: 13 84% 61%;
+    --destructive: 5 95% 54%;        /* reddish for dangerous */
     --destructive-foreground: 0 0% 98%;
 
-    --border: 44 14% 84%;
-    --input: 44 14% 84%;
-    --ring: 44 98% 53%;
+    --border: 225 13% 85%;           /* gray 200 */
+    --input: 225 13% 85%;
+    --ring: 48 98% 54%;
 
     --radius: 0.6rem;
 
-    --sidebar-background: 44 100% 98%;
-    --sidebar-foreground: 32 90% 16%;
-    --sidebar-primary: 44 98% 53%;
-    --sidebar-primary-foreground: 32 90% 12%;
-    --sidebar-accent: 46 10% 94%;
-    --sidebar-accent-foreground: 39 36% 33%;
-    --sidebar-border: 44 14% 84%;
-    --sidebar-ring: 44 98% 53%;
-
-    --honeybee: 44 100% 55%;
-    --honey-variant-1: 44 94% 85%;
-    --honey-variant-2: 44 98% 73%;
-    --honey-variant-3: 43 92% 60%;
+    --sidebar-background: 48 36% 98%;
+    --sidebar-foreground: 240 8% 10%;
+    --sidebar-primary: 48 98% 54%;
+    --sidebar-primary-foreground: 240 8% 10%;
+    --sidebar-accent: 210 10% 92%;
+    --sidebar-accent-foreground: 225 10% 29%;
+    --sidebar-border: 225 13% 85%;
+    --sidebar-ring: 48 98% 54%;
   }
 
   .dark {
-    --background: 32 18% 14%;
-    --foreground: 46 10% 96%;
+    --background: 225 10% 10%;
+    --foreground: 48 36% 98%;
 
-    --card: 32 20% 22%;
-    --card-foreground: 46 10% 96%;
+    --card: 225 10% 16%;
+    --card-foreground: 48 36% 98%;
 
-    --popover: 32 20% 16%;
-    --popover-foreground: 46 10% 96%;
+    --popover: 225 10% 16%;
+    --popover-foreground: 48 36% 98%;
 
-    --primary: 44 98% 53%;
-    --primary-foreground: 46 10% 96%;
+    --primary: 48 98% 53%;
+    --primary-foreground: 225 10% 10%;
 
-    --secondary: 46 60% 26%;
-    --secondary-foreground: 46 10% 96%;
+    --secondary: 225 12% 22%;
+    --secondary-foreground: 48 36% 98%;
 
-    --muted: 46 12% 22%;
-    --muted-foreground: 46 10% 70%;
+    --muted: 210 10% 23%;
+    --muted-foreground: 225 8% 80%;
 
-    --accent: 44 88% 57%;
-    --accent-foreground: 46 10% 96%;
+    --accent: 44 64% 52%;
+    --accent-foreground: 48 36% 98%;
 
-    --destructive: 13 60% 47%;
-    --destructive-foreground: 46 10% 96%;
+    --destructive: 10 95% 45%;
+    --destructive-foreground: 48 36% 98%;
 
-    --border: 44 18% 20%;
-    --input: 44 18% 20%;
-    --ring: 44 98% 53%;
+    --border: 225 9% 30%;
+    --input: 225 9% 30%;
+    --ring: 48 98% 53%;
 
-    --sidebar-background: 44 18% 14%;
-    --sidebar-foreground: 46 10% 96%;
-    --sidebar-primary: 44 98% 53%;
-    --sidebar-primary-foreground: 46 10% 96%;
-    --sidebar-accent: 44 12% 22%;
-    --sidebar-accent-foreground: 46 10% 96%;
-    --sidebar-border: 44 18% 20%;
-    --sidebar-ring: 44 98% 53%;
+    --sidebar-background: 225 10% 10%;
+    --sidebar-foreground: 48 36% 98%;
+    --sidebar-primary: 48 98% 54%;
+    --sidebar-primary-foreground: 48 36% 98%;
+    --sidebar-accent: 210 10% 23%;
+    --sidebar-accent-foreground: 48 36% 98%;
+    --sidebar-border: 225 9% 30%;
+    --sidebar-ring: 48 98% 53%;
   }
 }
 
 @layer base {
   * {
-    @apply border-honey-100;
+    @apply border-gray-200;
   }
 
   body {
     @apply bg-background text-foreground;
-    background-color: #FEF7CD;
-    background-image: url("data:image/svg+xml,%3Csvg width='80' height='70' viewBox='0 0 40 35' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='20,4 38,14 38,31 20,41 2,31 2,14' fill='%23FFD54F' fill-opacity='0.10'/%3E%3C/svg%3E");
-    background-size: 180px auto;
+    background-color: #F6E7B6; /* dirty yellow tint */
+    background-image: url("data:image/svg+xml,%3Csvg width='80' height='70' viewBox='0 0 40 35' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='20,4 38,14 38,31 20,41 2,31 2,14' fill='%23FFD338' fill-opacity='0.07'/%3E%3C/svg%3E");
+    background-size: 160px auto;
     background-repeat: repeat;
     background-attachment: fixed;
   }
 }
 
+/* Patterns and classes largely kept the same, just warm them a bit */
 .hexagon-pattern {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill='%23f59e0b' fill-opacity='0.1'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill='%23FFD338' fill-opacity='0.07'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 .honeycomb-pattern {
-  background-image: url("data:image/svg+xml,%3Csvg width='24' height='40' viewBox='0 0 24 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 40c5.523 0 10-4.477 10-10V0C4.477 0 0 4.477 0 10v30zm22 0c-5.523 0-10-4.477-10-10V0c5.523 0 10 4.477 10 10v30z' fill='%23f59e0b' fill-opacity='0.08' fill-rule='evenodd'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='40' viewBox='0 0 24 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 40c5.523 0 10-4.477 10-10V0C4.477 0 0 4.477 0 10v30zm22 0c-5.523 0-10-4.477-10-10V0c5.523 0 10 4.477 10 10v30z' fill='%23FFD338' fill-opacity='0.07' fill-rule='evenodd'/%3E%3C/svg%3E");
 }
 
+/* Keep main utility classes, update as needed for new theme */
+
 .hero-gradient {
-  background: linear-gradient(135deg, rgba(255, 251, 235, 0.9) 0%, rgba(254, 243, 199, 0.9) 100%);
+  background: linear-gradient(135deg, #FFFCEB 0%, #F1E7C8 100%);
 }
 
 .risk-low {
-  @apply text-green-500 bg-green-50 border-green-200;
+  @apply text-green-600 bg-green-50 border-green-200;
 }
 
 .risk-medium {
-  @apply text-yellow-500 bg-yellow-50 border-yellow-200;
+  @apply text-yellow-700 bg-yellow-50 border-yellow-200;
 }
 
 .risk-high {
-  @apply text-red-500 bg-red-50 border-red-200;
+  @apply text-red-600 bg-red-50 border-red-200;
 }
 
 .login-gradient {
-  background: linear-gradient(135deg, rgb(251, 191, 36, 0.1) 0%, rgb(245, 158, 11, 0.1) 100%);
+  background: linear-gradient(135deg, rgb(251, 191, 36, 0.13) 0%, rgb(245, 158, 11, 0.1) 100%);
 }
 
 .glass {
-  backdrop-filter: blur(12px);
-  background: rgba(253, 230, 138, 0.22); /* semi-glassy golden */
+  backdrop-filter: blur(10px);
+  background: rgba(250, 215, 55, 0.05); /* very subtle glassy */
   border-radius: 1rem;
-  border: 1px solid rgba(251, 191, 36, 0.18);
+  border: 1px solid rgba(173, 165, 125, 0.11);
 }
 
 .honey-gradient {
-  background: linear-gradient(135deg, #fffbe9 0%, #fbbf24 95%, #ffe29f 100%);
+  background: linear-gradient(135deg, #FAECC9 0%, #FFD338 95%, #FFEBA6 100%);
 }
 
-/* Animation classes */
 .animate-float {
-  animation: float 3s ease-in-out infinite;
+  /* disables floating by emptying rule for bee logo, keep available for other elements */
 }
 
 .animate-bounce {
-  animation: bounce 2s ease-in-out infinite;
+  /* disables bounce for bee logo */
 }
 
 .hover-scale {
   transition: transform 0.2s ease-in-out;
 }
-
 .hover-scale:hover {
-  transform: scale(1.05);
+  transform: scale(1.04);
 }
 
 .animate-fade-in {
   animation: fadeIn 1s ease-in-out;
 }
-
 .animate-scale-in {
   animation: scaleIn 0.5s ease-in-out;
 }
-
 .animate-slide-in-right {
   animation: slideInRight 0.3s ease-in-out;
 }
 
-.animation-delay-300 {
-  animation-delay: 300ms;
-}
+.animation-delay-300 { animation-delay: 300ms; }
+.animation-delay-700 { animation-delay: 700ms; }
+.animation-delay-2000 { animation-delay: 2000ms; }
 
-.animation-delay-700 {
-  animation-delay: 700ms;
-}
-
-.animation-delay-2000 {
-  animation-delay: 2000ms;
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
-}
-
+/* Keyframes, mostly unchanged */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
-
 @keyframes scaleIn {
-  from {
-    transform: scale(0.95);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
 }
-
 @keyframes slideInRight {
-  from {
-    transform: translateX(-5px);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
+  from { transform: translateX(-5px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0);}
+  50% { transform: translateY(-10px);}
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0);}
+  50% { transform: translateY(-5px);}
 }
