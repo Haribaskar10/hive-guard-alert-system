@@ -1,8 +1,9 @@
-
 import { Button } from "@/components/ui/button";
 import { Layout } from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
 import { AlertTriangle, BarChart3, Leaf, Radio, Shield } from "lucide-react";
+import { Bee } from "lucide-react";
+import clsx from "clsx";
 
 export default function Index() {
   return (
@@ -13,22 +14,22 @@ export default function Index() {
         <div className="container relative z-10 px-4 md:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <div className="inline-flex items-center rounded-full border px-4 py-1.5 text-sm font-medium bg-background">
-                <span className="flex h-2 w-2 rounded-full bg-honey-500 animate-pulse mr-2"></span>
+              <div className="inline-flex items-center rounded-full border px-4 py-1.5 text-sm font-medium bg-honey-100/60 shadow hover-scale">
+                <Bee className="h-4 w-4 text-honey-500 animate-bounce mr-2" />
                 AI-powered bee swarm prediction
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-honey-800 drop-shadow" style={{ textShadow: "0 1px 8px #fde68a40" }}>
                 Save your hives with intelligent swarm prediction
               </h1>
-              <p className="text-lg text-muted-foreground max-w-[600px]">
+              <p className="text-lg max-w-[600px] text-honey-950/80">
                 BeePulse helps beekeepers prevent colony losses by detecting swarm patterns 
                 before they happen, using acoustic monitoring and AI technology.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" asChild>
+                <Button size="lg" asChild className="honey-gradient text-white shadow-lg hover-scale">
                   <Link to="/signup">Get Started</Link>
                 </Button>
-                <Button size="lg" variant="outline" asChild>
+                <Button size="lg" variant="outline" asChild className="border-honey-400 text-honey-800 hover:bg-honey-100 hover:border-honey-500 hover:text-honey-900 hover-scale">
                   <Link to="/dashboard">View Demo</Link>
                 </Button>
               </div>
@@ -37,37 +38,37 @@ export default function Index() {
               <div className="relative w-full max-w-md">
                 <div className="absolute -left-4 -top-4 w-64 h-64 bg-honey-400 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-float"></div>
                 <div className="absolute -right-4 -bottom-4 w-64 h-64 bg-accent rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float animation-delay-2000"></div>
-                <div className="relative rounded-2xl border bg-card p-6 shadow-lg">
+                <div className="relative rounded-2xl border bg-card glass p-6 shadow-2xl animate-fade-in">
                   <div className="flex items-center justify-between mb-6">
-                    <h3 className="font-semibold">Live Swarm Risk</h3>
-                    <span className="text-xs text-muted-foreground">Now</span>
+                    <h3 className="font-semibold text-honey-900">Live Swarm Risk</h3>
+                    <span className="text-xs text-honey-700">Now</span>
                   </div>
                   <div className="space-y-4">
-                    <div className="flex items-center justify-between p-3 border rounded-lg bg-background">
+                    <div className="flex items-center justify-between p-3 border rounded-lg bg-honey-50/60 hover-scale shadow-sm transition-all duration-200">
                       <div>
-                        <p className="font-medium">Garden Hive</p>
-                        <p className="text-xs text-muted-foreground">Last update: 5 mins ago</p>
+                        <p className="font-medium text-honey-800">Garden Hive</p>
+                        <p className="text-xs text-honey-700">Last update: 5 mins ago</p>
                       </div>
-                      <div className="px-2.5 py-1 rounded-full bg-green-100 text-green-700 text-xs font-medium">
+                      <div className="px-2.5 py-1 rounded-full bg-green-50/80 text-green-700 text-xs font-bold shadow">
                         Low Risk
                       </div>
                     </div>
-                    <div className="flex items-center justify-between p-3 border rounded-lg bg-background">
+                    <div className="flex items-center justify-between p-3 border rounded-lg bg-honey-50/60 hover-scale shadow-sm">
                       <div>
-                        <p className="font-medium">Orchard Hive</p>
-                        <p className="text-xs text-muted-foreground">Last update: 2 mins ago</p>
+                        <p className="font-medium text-honey-800">Orchard Hive</p>
+                        <p className="text-xs text-honey-700">Last update: 2 mins ago</p>
                       </div>
-                      <div className="px-2.5 py-1 rounded-full bg-red-100 text-red-700 text-xs font-medium flex items-center gap-1">
+                      <div className="px-2.5 py-1 rounded-full bg-red-50/80 text-red-700 text-xs font-bold flex items-center gap-1 shadow">
                         <AlertTriangle className="h-3 w-3" />
                         High Risk
                       </div>
                     </div>
-                    <div className="flex items-center justify-between p-3 border rounded-lg bg-background">
+                    <div className="flex items-center justify-between p-3 border rounded-lg bg-honey-50/60 hover-scale shadow-sm">
                       <div>
-                        <p className="font-medium">Meadow Hive</p>
-                        <p className="text-xs text-muted-foreground">Last update: 8 mins ago</p>
+                        <p className="font-medium text-honey-800">Meadow Hive</p>
+                        <p className="text-xs text-honey-700">Last update: 8 mins ago</p>
                       </div>
-                      <div className="px-2.5 py-1 rounded-full bg-amber-100 text-amber-700 text-xs font-medium">
+                      <div className="px-2.5 py-1 rounded-full bg-amber-50/80 text-amber-800 text-xs font-bold shadow">
                         Medium Risk
                       </div>
                     </div>
@@ -83,70 +84,113 @@ export default function Index() {
       <section className="py-20 md:py-32">
         <div className="container px-4 md:px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4 text-honey-900">
               Smart Beekeeping Solutions
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg text-honey-800 max-w-3xl mx-auto">
               Our AI-powered system monitors your hives 24/7 and alerts you before
               swarms happen, so you can take action and save your colonies.
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="flex flex-col p-6 bg-card rounded-xl border shadow-sm">
-              <div className="h-12 w-12 rounded-full bg-honey-100 flex items-center justify-center mb-5">
+            <div className="flex flex-col p-6 bg-honey-50/70 glass rounded-xl border shadow-md animate-scale-in">
+              <div className="h-12 w-12 rounded-full bg-honey-200/90 flex items-center justify-center mb-5 animate-bounce">
                 <Radio className="h-6 w-6 text-honey-600" />
               </div>
-              <h3 className="text-xl font-bold mb-2">Acoustic Monitoring</h3>
-              <p className="text-muted-foreground mb-4">
+              <h3 className="text-xl font-bold mb-2 text-honey-900">Acoustic Monitoring</h3>
+              <p className="text-honey-800 mb-4">
                 Advanced sensors detect changes in bee colony sounds that indicate
                 potential swarming behavior before it happens.
               </p>
               <div className="mt-auto pt-4">
-                <Link to="/acoustic-monitoring" className="text-honey-600 hover:underline font-medium inline-flex items-center">
+                <Link
+                  to="/acoustic-monitoring"
+                  className="story-link text-honey-700 hover:text-honey-900 font-medium inline-flex items-center hover-scale"
+                >
                   Learn more
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1 animate-slide-in-right" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </Link>
               </div>
             </div>
             
-            <div className="flex flex-col p-6 bg-card rounded-xl border shadow-sm">
-              <div className="h-12 w-12 rounded-full bg-honey-100 flex items-center justify-center mb-5">
+            <div className="flex flex-col p-6 bg-honey-50/70 glass rounded-xl border shadow-md animate-scale-in">
+              <div className="h-12 w-12 rounded-full bg-honey-200/90 flex items-center justify-center mb-5 animate-bounce animation-delay-300">
                 <BarChart3 className="h-6 w-6 text-honey-600" />
               </div>
-              <h3 className="text-xl font-bold mb-2">AI Predictions</h3>
-              <p className="text-muted-foreground mb-4">
+              <h3 className="text-xl font-bold mb-2 text-honey-900">AI Predictions</h3>
+              <p className="text-honey-800 mb-4">
                 Our machine learning algorithms analyze acoustic patterns and environmental
                 data to predict swarm likelihood with high accuracy.
               </p>
               <div className="mt-auto pt-4">
-                <Link to="/ai-predictions" className="text-honey-600 hover:underline font-medium inline-flex items-center">
+                <Link
+                  to="/ai-predictions"
+                  className="story-link text-honey-700 hover:text-honey-900 font-medium inline-flex items-center hover-scale"
+                >
                   Learn more
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1 animate-slide-in-right" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </Link>
               </div>
             </div>
             
-            <div className="flex flex-col p-6 bg-card rounded-xl border shadow-sm">
-              <div className="h-12 w-12 rounded-full bg-honey-100 flex items-center justify-center mb-5">
+            <div className="flex flex-col p-6 bg-honey-50/70 glass rounded-xl border shadow-md animate-scale-in">
+              <div className="h-12 w-12 rounded-full bg-honey-200/90 flex items-center justify-center mb-5 animate-bounce animation-delay-700">
                 <Shield className="h-6 w-6 text-honey-600" />
               </div>
-              <h3 className="text-xl font-bold mb-2">Instant Alerts</h3>
-              <p className="text-muted-foreground mb-4">
+              <h3 className="text-xl font-bold mb-2 text-honey-900">Instant Alerts</h3>
+              <p className="text-honey-800 mb-4">
                 Receive real-time notifications via email, SMS, or app when our system
                 detects increased swarm risk in your hives.
               </p>
               <div className="mt-auto pt-4">
-                <Link to="/instant-alerts" className="text-honey-600 hover:underline font-medium inline-flex items-center">
+                <Link
+                  to="/instant-alerts"
+                  className="story-link text-honey-700 hover:text-honey-900 font-medium inline-flex items-center hover-scale"
+                >
                   Learn more
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1 animate-slide-in-right" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Impact Section */}
+      <section className="py-20 md:py-32">
+        <div className="container px-4 md:px-6 max-w-4xl mx-auto">
+          <div className="rounded-3xl bg-honey-50/80 glass shadow-2xl p-12 text-center relative overflow-hidden animate-fade-in">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 opacity-15 pointer-events-none">
+              <Bee className="w-64 h-64 text-honey-400 rotate-[15deg]" />
+            </div>
+            <h2 className="text-2xl md:text-4xl font-bold text-honey-900 mb-2 z-10 relative">
+              Real-world impact for your hives and for beekeeping communities
+            </h2>
+            <p className="text-lg md:text-xl text-honey-800 mb-10 z-10 relative">
+              BeePulse users see up to <span className="font-semibold text-honey-700">70% fewer lost swarms</span> and stronger, more productive colonies. Our predictive alerts and analytics help both hobbyists and commercial apiaries thrive.<br />
+              <span className="block mt-3 text-base text-honey-600">"Protect your bees, protect our future."</span>
+            </p>
+            {/* Demo video spot */}
+            <div className="mx-auto flex flex-col gap-2 items-center mt-8 z-10 relative">
+              <video
+                className="rounded-xl shadow-lg border-2 border-honey-100 w-full max-w-2xl bg-honey-100/60"
+                controls
+                poster="https://images.unsplash.com/photo-1498936178812-4b2e558d2937?auto=format&fit=facearea&w=600&q=80"
+                style={{ minHeight: "200px" }}
+              >
+                <source src="" type="video/mp4" />
+                {/* You can replace src above with your demo video! */}
+                Your browser does not support the video tag.
+              </video>
+              <div className="text-xs text-honey-700 mt-1">
+                (Add your own demo video above)
               </div>
             </div>
           </div>

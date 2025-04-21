@@ -1,7 +1,6 @@
-
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Bell, LogOut, Settings, User } from "lucide-react";
+import { Bell, LogOut, Settings, User, Bee } from "lucide-react";
 import { useState, useEffect } from "react";
 import {
   DropdownMenu,
@@ -19,7 +18,6 @@ export function Header() {
   const navigate = useNavigate();
   const [userData, setUserData] = useState<{ name?: string; email?: string } | null>(null);
 
-  // Check login status from localStorage on component mount
   useEffect(() => {
     const loginStatus = localStorage.getItem("isLoggedIn") === "true";
     const storedUserData = localStorage.getItem("userData");
@@ -52,14 +50,16 @@ export function Header() {
     <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur">
       <div className="container flex h-16 items-center">
         <div className="flex items-center gap-2">
-          <Link 
-            to="/" 
-            className="flex items-center gap-2"
-          >
-            <div className="w-8 h-8 rounded-md bg-honey-500 flex items-center justify-center">
-              <span className="font-bold text-white">BP</span>
+          <Link to="/" className="flex items-center gap-2">
+            <div className="relative w-10 h-10 rounded-md bg-honey-400 flex items-center justify-center shadow honey-gradient">
+              <Bee
+                className="h-7 w-7 text-yellow-600 animate-float"
+                strokeWidth={2.3}
+                style={{ filter: "drop-shadow(0 2px 4px #fbbf24cc)" }}
+              />
+              <span className="absolute -right-0.5 -bottom-0.5 text-xs font-bold text-honey-950">BP</span>
             </div>
-            <span className="text-xl font-bold">BeePulse</span>
+            <span className="text-xl font-bold text-honey-800 drop-shadow-sm">BeePulse</span>
           </Link>
         </div>
 
