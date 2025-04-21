@@ -36,7 +36,7 @@ export const BeeIcon: React.FC<BeeIconProps> = ({
       <path d="M14 17c0 1.1-.9 2-2 2s-2-.9-2-2" />
       <path d="M8 12v5" />
       <path d="M16 12v5" />
-      <path d="M8 17c0 1.1-.9 2-2 2s-2-.9-2-2" />
+      <path d="M8 17c0 1.1-.9 2-2 2s-2-.9 2-2" />
       <path d="M18 17c0 1.1.9 2 2 2s2-.9 2-2" />
     </svg>
   );
