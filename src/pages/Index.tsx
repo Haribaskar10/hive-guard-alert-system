@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Layout } from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
 import { AlertTriangle, BarChart3, Leaf, Radio, Shield } from "lucide-react";
-import { Bee } from "lucide-react";
+import BeeIcon from "@/components/icons/BeeIcon";
 import clsx from "clsx";
 
 export default function Index() {
@@ -15,7 +15,7 @@ export default function Index() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <div className="inline-flex items-center rounded-full border px-4 py-1.5 text-sm font-medium bg-honey-100/60 shadow hover-scale">
-                <Bee className="h-4 w-4 text-honey-500 animate-bounce mr-2" />
+                <BeeIcon className="h-4 w-4 text-honey-500 animate-bounce mr-2" />
                 AI-powered bee swarm prediction
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-honey-800 drop-shadow" style={{ textShadow: "0 1px 8px #fde68a40" }}>
@@ -168,7 +168,7 @@ export default function Index() {
         <div className="container px-4 md:px-6 max-w-4xl mx-auto">
           <div className="rounded-3xl bg-honey-50/80 glass shadow-2xl p-12 text-center relative overflow-hidden animate-fade-in">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 opacity-15 pointer-events-none">
-              <Bee className="w-64 h-64 text-honey-400 rotate-[15deg]" />
+              <BeeIcon className="w-64 h-64 text-honey-400 rotate-[15deg]" />
             </div>
             <h2 className="text-2xl md:text-4xl font-bold text-honey-900 mb-2 z-10 relative">
               Real-world impact for your hives and for beekeeping communities
@@ -177,7 +177,6 @@ export default function Index() {
               BeePulse users see up to <span className="font-semibold text-honey-700">70% fewer lost swarms</span> and stronger, more productive colonies. Our predictive alerts and analytics help both hobbyists and commercial apiaries thrive.<br />
               <span className="block mt-3 text-base text-honey-600">"Protect your bees, protect our future."</span>
             </p>
-            {/* Demo video spot */}
             <div className="mx-auto flex flex-col gap-2 items-center mt-8 z-10 relative">
               <video
                 className="rounded-xl shadow-lg border-2 border-honey-100 w-full max-w-2xl bg-honey-100/60"
@@ -186,7 +185,6 @@ export default function Index() {
                 style={{ minHeight: "200px" }}
               >
                 <source src="" type="video/mp4" />
-                {/* You can replace src above with your demo video! */}
                 Your browser does not support the video tag.
               </video>
               <div className="text-xs text-honey-700 mt-1">

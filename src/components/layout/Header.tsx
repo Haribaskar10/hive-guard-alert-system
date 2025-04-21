@@ -1,6 +1,7 @@
+
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Bell, LogOut, Settings, User, Bee } from "lucide-react";
+import { Bell, LogOut, Settings, User } from "lucide-react";
 import { useState, useEffect } from "react";
 import {
   DropdownMenu,
@@ -11,6 +12,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useToast } from "@/hooks/use-toast";
+import BeeIcon from "@/components/icons/BeeIcon";
 
 export function Header() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -52,7 +54,7 @@ export function Header() {
         <div className="flex items-center gap-2">
           <Link to="/" className="flex items-center gap-2">
             <div className="relative w-10 h-10 rounded-md bg-honey-400 flex items-center justify-center shadow honey-gradient">
-              <Bee
+              <BeeIcon
                 className="h-7 w-7 text-yellow-600 animate-float"
                 strokeWidth={2.3}
                 style={{ filter: "drop-shadow(0 2px 4px #fbbf24cc)" }}
