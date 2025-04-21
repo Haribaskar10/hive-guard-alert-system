@@ -1,6 +1,6 @@
+
 import type { Config } from "tailwindcss";
 
-// Main palette: dirty yellow, greys, black for bee/biodiversity/agriculture
 export default {
   darkMode: ["class"],
   content: [
@@ -25,43 +25,75 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        dirtyyellow: {
-          light: "#F6E7B6",
-          DEFAULT: "#FFD338",   // dirty yellow (main)
-          dark: "#BFA114",
+        bee: {
+          light: "#FEF7CD",
+          DEFAULT: "#FDE1D3",
+          orange: "#FEC6A1",
+          gray: "#F1F0FB",
+          dark: "#aaadb0",
+          black: "#2E2219",
         },
-        gray: {
-          50:  "#F8F9FA",
-          100: "#F1F3F5",
-          200: "#E9ECEF",
-          300: "#DEE2E6",
-          400: "#CED4DA",
-          500: "#ADB5BD",
-          600: "#6C757D",
-          700: "#495057",
-          800: "#343A40",
-          900: "#212529",
+        honey: {
+          50: "#FFF8E1",
+          100: "#FFECB3",
+          200: "#FFE082",
+          300: "#FFD54F",
+          400: "#FFCA28",
+          500: "#FFC107",
+          600: "#FFB300",
+          700: "#FFA000",
+          800: "#FF8F00",
+          900: "#FF6F00",
         },
-        black: "#18181B",
+        hive: {
+          50: "#FFFDF9",
+          100: "#FDF3DF",
+          200: "#F5D6A2",
+          300: "#F7BE6A",
+          400: "#DF9F2D",
+          500: "#B87800",
+          600: "#856200",
+          700: "#5B4200",
+          800: "#403312",
+          900: "#211700",
+        },
         primary: {
-          DEFAULT: "#FFD338",
-          foreground: "#18181B",
+          DEFAULT: "#FFC107",
+          foreground: "#40290A",
         },
         secondary: {
-          DEFAULT: "#343A40",
-          foreground: "#FFD338",
+          DEFAULT: "#FEF7CD",
+          foreground: "#AF894D",
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
         },
         muted: {
-          DEFAULT: "#E9ECEF",
-          foreground: "#495057",
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
         },
         accent: {
-          DEFAULT: "#F6E7B6",
-          foreground: "#18181B",
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
         },
         card: {
-          DEFAULT: "#FFFDF8",
-          foreground: "#18181B"
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
+        sidebar: {
+          DEFAULT: "hsl(var(--sidebar-background))",
+          foreground: "hsl(var(--sidebar-foreground))",
+          primary: "hsl(var(--sidebar-primary))",
+          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
+          accent: "hsl(var(--sidebar-accent))",
+          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
+          border: "hsl(var(--sidebar-border))",
+          ring: "hsl(var(--sidebar-ring))",
         },
       },
       borderRadius: {
