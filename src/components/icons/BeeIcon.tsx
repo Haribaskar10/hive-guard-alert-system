@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React from "react";
 
 interface BeeIconProps {
   className?: string;
@@ -7,39 +7,34 @@ interface BeeIconProps {
   style?: React.CSSProperties;
 }
 
-export const BeeIcon: React.FC<BeeIconProps> = ({ 
-  className = "h-6 w-6", 
-  strokeWidth = 2, 
-  style 
-}) => {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={strokeWidth}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-      style={style}
-    >
-      <path d="M12 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
-      <path d="M16 9c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
-      <path d="M8 9c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
-      <path d="M14 7a2 2 0 1 0-4 0" />
-      <path d="M18 5a2 2 0 1 0-4 0" />
-      <path d="M10 5a2 2 0 1 0-4 0" />
-      <path d="M12 14v4" />
-      <path d="M14 17c0 1.1-.9 2-2 2s-2-.9-2-2" />
-      <path d="M8 12v5" />
-      <path d="M16 12v5" />
-      <path d="M8 17c0 1.1-.9 2-2 2s-2-.9 2-2" />
-      <path d="M18 17c0 1.1.9 2 2 2s2-.9 2-2" />
-    </svg>
-  );
-};
+export const BeeIcon: React.FC<BeeIconProps> = ({
+  className = "h-6 w-6",
+  strokeWidth = 2,
+  style,
+}) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 52 52"
+    fill="none"
+    className={className}
+    style={style}
+  >
+    {/* Simple, neat bee logo: head, body (stripes), wings */}
+    <ellipse cx="26" cy="37" rx="11" ry="8" fill="#FFC107" stroke="#2E2219" strokeWidth={strokeWidth} />
+    <ellipse cx="26" cy="19" rx="8" ry="8" fill="#FFC107" stroke="#2E2219" strokeWidth={strokeWidth} />
+    <ellipse cx="15" cy="13" rx="5" ry="7" fill="#fff9e1" stroke="#B87800" strokeWidth={strokeWidth * 0.9} opacity="0.8" />
+    <ellipse cx="37" cy="13" rx="5" ry="7" fill="#fff9e1" stroke="#B87800" strokeWidth={strokeWidth * 0.9} opacity="0.8" />
+    {/* Stripes */}
+    <rect x="22" y="30" width="3" height="15" fill="#2E2219" rx="1.2" />
+    <rect x="27" y="30" width="3" height="15" fill="#2E2219" rx="1.2" />
+    {/* Face */}
+    <circle cx="25.5" cy="17" r="1.3" fill="#2E2219" />
+    <circle cx="30.5" cy="17" r="1.3" fill="#2E2219" />
+    <path d="M27.5 20 q.6 2 2 0" stroke="#2E2219" strokeWidth=".8" fill="none" />
+    {/* Antennae */}
+    <path d="M24 12 Q23 7 18 7" stroke="#2E2219" strokeWidth=".8" fill="none" />
+    <path d="M31 12 Q32 6 37 7" stroke="#2E2219" strokeWidth=".8" fill="none" />
+  </svg>
+);
 
 export default BeeIcon;
