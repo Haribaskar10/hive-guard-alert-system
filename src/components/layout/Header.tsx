@@ -11,7 +11,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useToast } from "@/hooks/use-toast";
-import BeeIcon from "@/components/icons/BeeIcon";
+import BeePulseLogo from "@/components/icons/BeePulseLogo";
 
 export function Header() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -48,19 +48,11 @@ export function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b bg-honey-variant-1/90 backdrop-blur-sm">
+    <header className="sticky top-0 z-40 w-full border-b bg-background/90 backdrop-blur-sm">
       <div className="container flex h-16 items-center">
         <div className="flex items-center gap-2">
           <Link to="/" className="flex items-center gap-2">
-            <div className="relative w-10 h-10 rounded-md bg-honey-400 flex items-center justify-center shadow honey-gradient hover:shadow-lg transition-shadow duration-300">
-              <BeeIcon
-                className="h-7 w-7 text-yellow-600 animate-float"
-                strokeWidth={2.3}
-                style={{ filter: "drop-shadow(0 2px 4px #fbbf24cc)" }}
-              />
-              <span className="absolute -right-0.5 -bottom-0.5 text-xs font-bold text-honey-950 select-none">BP</span>
-            </div>
-            <span className="text-xl font-bold text-honey-800 drop-shadow-sm select-none">BeePulse</span>
+            <BeePulseLogo className="h-8 w-auto" />
           </Link>
         </div>
 

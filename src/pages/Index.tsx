@@ -1,9 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Layout } from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
-import { AlertTriangle, BarChart3, Leaf, Radio, Shield } from "lucide-react";
-import BeeIcon from "@/components/icons/BeeIcon";
-import clsx from "clsx";
+import { BarChart3, Radio, Shield } from "lucide-react";
+import BeePulseLogo from "@/components/icons/BeePulseLogo";
 
 export default function Index() {
   return (
@@ -16,7 +15,7 @@ export default function Index() {
             <div className="space-y-6">
               <div className="inline-flex items-center rounded-full border px-4 py-1.5 text-sm font-medium bg-dirtyyellow-light/60 shadow hover-scale">
                 {/* Remove 'animate-bounce' from BeeIcon */}
-                <BeeIcon className="h-4 w-4 text-dirtyyellow-dark mr-2" />
+                <BeePulseLogo className="h-4 w-4 text-dirtyyellow-dark mr-2" />
                 AI-powered bee swarm prediction
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-primary drop-shadow" style={{ textShadow: "0 1px 8px #ffd33840" }}>
@@ -82,69 +81,6 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Impact Section - Your provided points in grey/black card style */}
-      <section className="py-20 md:py-28 bg-gray-900 text-primary">
-        <div className="container max-w-4xl mx-auto px-4 md:px-8">
-          <div className="rounded-3xl bg-black/80 shadow-2xl p-10 md:p-16 flex flex-col md:flex-row items-center md:items-start gap-8 animate-fade-in border border-gray-700">
-            <div className="flex-1 mb-6 md:mb-0 text-center md:text-left">
-              <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3 flex items-center gap-2">
-                <span className="inline-block text-3xl md:text-4xl">🌍</span>
-                Environmental & Social Impact
-              </h2>
-              <p className="text-lg md:text-xl text-gray-200 font-medium mb-4">
-                BeePulse not only protects your hives, but helps save our environment and food supply.
-              </p>
-            </div>
-            <div className="flex-[2] grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-gray-800/80 rounded-xl p-5 border border-gray-700 flex items-start gap-3">
-                <span className="text-2xl">🌍</span>
-                <div>
-                  <span className="font-semibold text-primary block">Environmental Protection</span>
-                  <span className="text-gray-200 text-sm">
-                    Helps preserve pollinator populations essential for healthy ecosystems and biodiversity.
-                  </span>
-                </div>
-              </div>
-              <div className="bg-gray-800/80 rounded-xl p-5 border border-gray-700 flex items-start gap-3">
-                <span className="text-2xl">🌾</span>
-                <div>
-                  <span className="font-semibold text-primary block">Agricultural Boost</span>
-                  <span className="text-gray-200 text-sm">
-                    Supports farmers by ensuring effective pollination, leading to improved crop yields and food security.
-                  </span>
-                </div>
-              </div>
-              <div className="bg-gray-800/80 rounded-xl p-5 border border-gray-700 flex items-start gap-3">
-                <span className="text-2xl">🧠</span>
-                <div>
-                  <span className="font-semibold text-primary block">Data-Driven Insights</span>
-                  <span className="text-gray-200 text-sm">
-                    Provides real-time data on hive health and behavior, enabling early intervention and informed decision-making.
-                  </span>
-                </div>
-              </div>
-              <div className="bg-gray-800/80 rounded-xl p-5 border border-gray-700 flex items-start gap-3">
-                <span className="text-2xl">🔧</span>
-                <div>
-                  <span className="font-semibold text-primary block">Innovative Tech</span>
-                  <span className="text-gray-200 text-sm">
-                    Combines IoT, AI, and cloud services to create a smart, scalable, and sustainable monitoring solution.
-                  </span>
-                </div>
-              </div>
-              <div className="bg-gray-800/80 rounded-xl p-5 border border-gray-700 flex items-start gap-3 md:col-span-2">
-                <span className="text-2xl">💡</span>
-                <div>
-                  <span className="font-semibold text-primary block">Sustainable Future</span>
-                  <span className="text-gray-200 text-sm">
-                    By protecting bees, we support a greener planet and a more resilient food system for generations to come.
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
       {/* Features Section */}
       <section className="py-20 md:py-32">
         <div className="container px-4 md:px-6">
@@ -222,38 +158,6 @@ export default function Index() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Impact Section */}
-      <section className="py-20 md:py-32">
-        <div className="container px-4 md:px-6 max-w-4xl mx-auto">
-          <div className="rounded-3xl bg-dirtyyellow-light/80 glass shadow-2xl p-12 text-center relative overflow-hidden animate-fade-in">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 opacity-15 pointer-events-none">
-              <BeeIcon className="w-64 h-64 text-dirtyyellow-dark rotate-[15deg]" />
-            </div>
-            <h2 className="text-2xl md:text-4xl font-bold text-primary mb-2 z-10 relative">
-              Real-world impact for your hives and for beekeeping communities
-            </h2>
-            <p className="text-lg md:text-xl text-secondary mb-10 z-10 relative">
-              BeePulse users see up to <span className="font-semibold text-primary">70% fewer lost swarms</span> and stronger, more productive colonies. Our predictive alerts and analytics help both hobbyists and commercial apiaries thrive.<br />
-              <span className="block mt-3 text-base text-gray-600">"Protect your bees, protect our future."</span>
-            </p>
-            <div className="mx-auto flex flex-col gap-2 items-center mt-8 z-10 relative">
-              <video
-                className="rounded-xl shadow-lg border-2 border-gray-100 w-full max-w-2xl bg-dirtyyellow-light/60"
-                controls
-                poster="https://images.unsplash.com/photo-1498936178812-4b2e558d2937?auto=format&fit=facearea&w=600&q=80"
-                style={{ minHeight: "200px" }}
-              >
-                <source src="" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-              <div className="text-xs text-gray-700 mt-1">
-                (Add your own demo video above)
               </div>
             </div>
           </div>
@@ -372,16 +276,16 @@ export default function Index() {
           </div>
         </div>
       </section>
-      
+
       {/* CTA Section */}
-      <section className="py-20 md:py-32 bg-dirtyyellow-dark">
+      <section className="py-20 md:py-32 bg-primary">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center text-center space-y-6">
-            <Leaf className="h-16 w-16 text-white" />
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <BeePulseLogo className="h-16 w-auto mb-4" />
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-primary-foreground mb-4">
               Ready to protect your bee colonies?
             </h2>
-            <p className="text-xl text-white/90 max-w-3xl">
+            <p className="text-xl text-primary-foreground/90 max-w-3xl">
               Join beekeepers around the world who are using BeePulse to predict and prevent
               swarms before they happen.
             </p>
@@ -389,7 +293,12 @@ export default function Index() {
               <Button size="lg" variant="secondary" asChild>
                 <Link to="/signup">Get Started</Link>
               </Button>
-              <Button size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-dirtyyellow-dark" asChild>
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary" 
+                asChild
+              >
                 <Link to="/contact">Contact Sales</Link>
               </Button>
             </div>
