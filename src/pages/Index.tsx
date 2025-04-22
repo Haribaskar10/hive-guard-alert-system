@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Layout } from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
-import { BarChart3, Radio, Shield } from "lucide-react";
+import { AlertTriangle, BarChart3, Radio, Shield } from "lucide-react";
 import BeePulseLogo from "@/components/icons/BeePulseLogo";
 
 export default function Index() {
@@ -45,7 +45,7 @@ export default function Index() {
                     <span className="text-xs text-secondary">Now</span>
                   </div>
                   <div className="space-y-4">
-                    <div className="flex items-center justify-between p-3 border rounded-lg bg-dirtyyellow-light/70 hover-scale shadow-sm transition-all duration-200">
+                    <div className="flex items-center justify-between p-3 border rounded-lg bg-dirtyyellow-light/70 hover-scale shadow-sm">
                       <div>
                         <p className="font-medium text-secondary">Garden Hive</p>
                         <p className="text-xs text-secondary">Last update: 5 mins ago</p>
