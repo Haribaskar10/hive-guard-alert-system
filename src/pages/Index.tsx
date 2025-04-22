@@ -163,6 +163,34 @@ export default function Index() {
         </div>
       </section>
 
+      {/* Demo Video Section */}
+      <section className="py-20 bg-honey-50/50">
+        <div className="container px-4 md:px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
+              See BeePulse in Action
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Watch how BeePulse helps beekeepers protect their hives and prevent swarms
+              using advanced AI technology.
+            </p>
+          </div>
+          
+          <div className="max-w-4xl mx-auto">
+            <div className="aspect-video rounded-xl overflow-hidden shadow-xl border border-honey-200">
+              <video
+                className="w-full h-full object-cover"
+                controls
+                poster="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=1280&h=720"
+              >
+                <source src="/path-to-your-demo-video.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Impact Section */}
       <section className="py-20 md:py-32">
         <div className="container px-4 md:px-6 max-w-4xl mx-auto">
