@@ -10,10 +10,9 @@ const BeePulseLogo: React.FC<BeePulseLogoProps> = ({ className, style }) => (
   <img
     src="/lovable-uploads/6c07f216-5fc1-4c1d-bc54-32baae74d18a.png"
     alt="BeePulse Logo"
-    className={className}
+    className={`h-12 w-auto ${className}`}
     style={style}
   />
 );
 
 export default BeePulseLogo;
-

@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { useToast } from "@/hooks/use-toast";
 import BeePulseLogo from "@/components/icons/BeePulseLogo";
+import { ThemeToggle } from "@/components/theme/ThemeToggle";
 
 export function Header() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -52,7 +53,7 @@ export function Header() {
       <div className="container flex h-16 items-center">
         <div className="flex items-center gap-2">
           <Link to="/" className="flex items-center gap-2">
-            <BeePulseLogo className="h-8 w-auto" />
+            <BeePulseLogo className="h-10 w-auto hover:opacity-90 transition-opacity" />
           </Link>
         </div>
 
@@ -78,15 +79,20 @@ export function Header() {
         <div className="flex items-center gap-2">
           {!isLoggedIn ? (
             <>
+              <ThemeToggle />
               <Button variant="ghost" asChild>
                 <Link to="/login">Log in</Link>
               </Button>
-              <Button asChild>
+              <Button 
+                asChild
+                className="bg-gradient-to-r from-[#FFB800] to-[#FFD338] text-black hover:opacity-90"
+              >
                 <Link to="/signup">Sign up</Link>
               </Button>
             </>
           ) : (
             <>
+              <ThemeToggle />
               <Button 
                 variant="ghost" 
                 size="icon"
