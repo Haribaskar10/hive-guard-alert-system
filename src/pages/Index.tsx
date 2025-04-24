@@ -35,44 +35,11 @@ export default function Index() {
             <div className="flex justify-center">
               <div className="relative w-full max-w-md">
                 <div className="relative rounded-2xl glass p-6 shadow-lg">
-                  <div className="flex items-center justify-between mb-6">
-                    <img
-                      src="/lovable-uploads/75b73f8a-f728-4f3a-8cb1-7396d14c7557.png"
-                      alt="Bee on Honeycomb"
-                      className="w-full h-48 object-cover rounded-lg mb-4"
-                    />
-                    <span className="text-xs text-muted-foreground">Now</span>
-                  </div>
-                  <div className="space-y-4">
-                    <div className="flex items-center justify-between p-3 border rounded-lg hover:bg-accent">
-                      <div>
-                        <p className="font-medium">Garden Hive</p>
-                        <p className="text-xs text-muted-foreground">Last update: 5 mins ago</p>
-                      </div>
-                      <div className="px-2.5 py-1 rounded-full bg-green-500/10 text-green-700 text-xs font-bold">
-                        Low Risk
-                      </div>
-                    </div>
-                    <div className="flex items-center justify-between p-3 border rounded-lg hover:bg-accent">
-                      <div>
-                        <p className="font-medium">Orchard Hive</p>
-                        <p className="text-xs text-muted-foreground">Last update: 2 mins ago</p>
-                      </div>
-                      <div className="px-2.5 py-1 rounded-full bg-red-500/10 text-red-700 text-xs font-bold flex items-center gap-1">
-                        <AlertTriangle className="h-3 w-3" />
-                        High Risk
-                      </div>
-                    </div>
-                    <div className="flex items-center justify-between p-3 border rounded-lg hover:bg-accent">
-                      <div>
-                        <p className="font-medium">Meadow Hive</p>
-                        <p className="text-xs text-muted-foreground">Last update: 8 mins ago</p>
-                      </div>
-                      <div className="px-2.5 py-1 rounded-full bg-yellow-500/10 text-yellow-800 text-xs font-bold">
-                        Medium Risk
-                      </div>
-                    </div>
-                  </div>
+                  <img
+                    src="/lovable-uploads/75b73f8a-f728-4f3a-8cb1-7396d14c7557.png"
+                    alt="Bee on Honeycomb"
+                    className="w-full h-64 object-cover rounded-lg"
+                  />
                 </div>
               </div>
             </div>
