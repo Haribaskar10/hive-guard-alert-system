@@ -33,7 +33,7 @@ export function DashboardSidebar() {
     <Sidebar>
       <SidebarHeader>
         <Link to="/" className="flex items-center gap-2 px-2">
-          <div className="w-8 h-8 rounded-md bg-honey-500 flex items-center justify-center">
+          <div className="w-8 h-8 rounded-full overflow-hidden bg-honey-500 flex items-center justify-center">
             <span className="font-bold text-white">BP</span>
           </div>
           <span className="font-bold">BeePulse</span>
@@ -45,8 +45,8 @@ export function DashboardSidebar() {
           <div className="text-xs font-medium text-sidebar-foreground/70 px-2 mb-2">Main</div>
           <SidebarMenuItem>
             <SidebarMenuButton asChild isActive={isActive("/dashboard")}>
-              <Link to="/dashboard">
-                <Home className="h-4 w-4" />
+              <Link to="/dashboard" className="flex items-center w-full">
+                <Home className="h-4 w-4 mr-2" />
                 <span>Dashboard</span>
               </Link>
             </SidebarMenuButton>
@@ -54,8 +54,8 @@ export function DashboardSidebar() {
           
           <SidebarMenuItem>
             <SidebarMenuButton asChild isActive={isActive("/hives")}>
-              <Link to="/hives">
-                <Box className="h-4 w-4" />
+              <Link to="/hives" className="flex items-center w-full">
+                <Box className="h-4 w-4 mr-2" />
                 <span>Hives</span>
               </Link>
             </SidebarMenuButton>
@@ -63,8 +63,8 @@ export function DashboardSidebar() {
           
           <SidebarMenuItem>
             <SidebarMenuButton asChild isActive={isActive("/analytics")}>
-              <Link to="/analytics">
-                <BarChart3 className="h-4 w-4" />
+              <Link to="/analytics" className="flex items-center w-full">
+                <BarChart3 className="h-4 w-4 mr-2" />
                 <span>Analytics</span>
               </Link>
             </SidebarMenuButton>
@@ -74,8 +74,8 @@ export function DashboardSidebar() {
           
           <SidebarMenuItem>
             <SidebarMenuButton asChild isActive={isActive("/acoustic-monitoring")}>
-              <Link to="/acoustic-monitoring">
-                <Headphones className="h-4 w-4" />
+              <Link to="/acoustic-monitoring" className="flex items-center w-full">
+                <Headphones className="h-4 w-4 mr-2" />
                 <span>Acoustic Monitoring</span>
               </Link>
             </SidebarMenuButton>
@@ -83,8 +83,8 @@ export function DashboardSidebar() {
           
           <SidebarMenuItem>
             <SidebarMenuButton asChild isActive={isActive("/ai-predictions")}>
-              <Link to="/ai-predictions">
-                <Brain className="h-4 w-4" />
+              <Link to="/ai-predictions" className="flex items-center w-full">
+                <Brain className="h-4 w-4 mr-2" />
                 <span>AI Predictions</span>
               </Link>
             </SidebarMenuButton>
@@ -92,8 +92,8 @@ export function DashboardSidebar() {
           
           <SidebarMenuItem>
             <SidebarMenuButton asChild isActive={isActive("/instant-alerts")}>
-              <Link to="/instant-alerts">
-                <AlertTriangle className="h-4 w-4" />
+              <Link to="/instant-alerts" className="flex items-center w-full">
+                <AlertTriangle className="h-4 w-4 mr-2" />
                 <span>Instant Alerts</span>
               </Link>
             </SidebarMenuButton>
@@ -102,8 +102,8 @@ export function DashboardSidebar() {
           <div className="text-xs font-medium text-sidebar-foreground/70 px-2 mb-2 mt-6">Account</div>
           <SidebarMenuItem>
             <SidebarMenuButton asChild isActive={isActive("/notifications")}>
-              <Link to="/notifications">
-                <Bell className="h-4 w-4" />
+              <Link to="/notifications" className="flex items-center w-full">
+                <Bell className="h-4 w-4 mr-2" />
                 <span>Notifications</span>
               </Link>
             </SidebarMenuButton>
@@ -111,8 +111,8 @@ export function DashboardSidebar() {
           
           <SidebarMenuItem>
             <SidebarMenuButton asChild isActive={isActive("/settings")}>
-              <Link to="/settings">
-                <Settings className="h-4 w-4" />
+              <Link to="/settings" className="flex items-center w-full">
+                <Settings className="h-4 w-4 mr-2" />
                 <span>Settings</span>
               </Link>
             </SidebarMenuButton>
@@ -123,8 +123,8 @@ export function DashboardSidebar() {
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton asChild isActive={isActive("/support")}>
-              <Link to="/support">
-                <HelpCircle className="h-4 w-4" />
+              <Link to="/support" className="flex items-center w-full">
+                <HelpCircle className="h-4 w-4 mr-2" />
                 <span>Support</span>
               </Link>
             </SidebarMenuButton>
