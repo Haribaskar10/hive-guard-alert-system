@@ -36,7 +36,11 @@ export default function Index() {
               <div className="relative w-full max-w-md">
                 <div className="relative rounded-2xl glass p-6 shadow-lg">
                   <div className="flex items-center justify-between mb-6">
-                    <h3 className="font-semibold">Live Swarm Risk</h3>
+                    <img
+                      src="/lovable-uploads/75b73f8a-f728-4f3a-8cb1-7396d14c7557.png"
+                      alt="Bee on Honeycomb"
+                      className="w-full h-48 object-cover rounded-lg mb-4"
+                    />
                     <span className="text-xs text-muted-foreground">Now</span>
                   </div>
                   <div className="space-y-4">

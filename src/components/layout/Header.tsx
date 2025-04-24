@@ -1,3 +1,4 @@
+
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Bell, LogOut, Settings, User } from "lucide-react";
@@ -52,8 +53,9 @@ export function Header() {
     <header className="sticky top-0 z-40 w-full border-b bg-background/90 backdrop-blur-sm">
       <div className="container flex h-16 items-center">
         <div className="flex items-center gap-2">
-          <Link to="/" className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-3">
             <BeePulseLogo className="h-10 w-auto hover:opacity-90 transition-opacity" />
+            <span className="text-xl font-bold text-foreground">BeePulse</span>
           </Link>
         </div>
 
