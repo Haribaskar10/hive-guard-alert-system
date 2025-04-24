@@ -1,4 +1,3 @@
-
 import { Layout } from "@/components/layout/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -113,8 +112,8 @@ export default function About() {
                 className="w-24 h-24 rounded-full mx-auto"
               />
               <div>
-                <h3 className="font-bold">Dr. Emma Chen</h3>
-                <p className="text-muted-foreground">Co-Founder & Chief Scientist</p>
+                <h3 className="font-bold">HariBaskar</h3>
+                <p className="text-muted-foreground">ML Developer</p>
               </div>
             </div>
             
@@ -125,8 +124,8 @@ export default function About() {
                 className="w-24 h-24 rounded-full mx-auto"
               />
               <div>
-                <h3 className="font-bold">Michael Patel</h3>
-                <p className="text-muted-foreground">Co-Founder & CTO</p>
+                <h3 className="font-bold">Jibesh</h3>
+                <p className="text-muted-foreground">IOT Engineer</p>
               </div>
             </div>
             
@@ -137,8 +136,8 @@ export default function About() {
                 className="w-24 h-24 rounded-full mx-auto"
               />
               <div>
-                <h3 className="font-bold">Sarah Johnson</h3>
-                <p className="text-muted-foreground">Head of Product</p>
+                <h3 className="font-bold">Janani</h3>
+                <p className="text-muted-foreground">Web Developer</p>
               </div>
             </div>
             
@@ -149,8 +148,8 @@ export default function About() {
                 className="w-24 h-24 rounded-full mx-auto"
               />
               <div>
-                <h3 className="font-bold">James Wilson</h3>
-                <p className="text-muted-foreground">Master Beekeeper</p>
+                <h3 className="font-bold">Harini</h3>
+                <p className="text-muted-foreground">Web Developer</p>
               </div>
             </div>
           </div>

@@ -14,7 +14,7 @@ import { Card } from "@/components/ui/card";
 const mockHives = [
   {
     id: "hive-1",
-    name: "Garden Hive",
+    name: "Hive 1",
     location: "Backyard Garden",
     lastReading: "10 minutes ago",
     swarmRisk: "low" as const,
@@ -25,7 +25,7 @@ const mockHives = [
   },
   {
     id: "hive-2",
-    name: "Orchard Hive",
+    name: "Hive 2",
     location: "East Orchard",
     lastReading: "5 minutes ago",
     swarmRisk: "high" as const,
@@ -36,7 +36,7 @@ const mockHives = [
   },
   {
     id: "hive-3",
-    name: "Meadow Hive",
+    name: "Hive 3",
     location: "North Field",
     lastReading: "15 minutes ago",
     swarmRisk: "medium" as const,
@@ -47,7 +47,7 @@ const mockHives = [
   },
   {
     id: "hive-4",
-    name: "Forest Hive",
+    name: "Hive 4",
     location: "West Forest Edge",
     lastReading: "25 minutes ago",
     swarmRisk: "low" as const,
@@ -58,7 +58,7 @@ const mockHives = [
   },
   {
     id: "hive-5",
-    name: "Lavender Hive",
+    name: "Hive 5",
     location: "Lavender Field",
     lastReading: "32 minutes ago",
     swarmRisk: "low" as const,
@@ -69,7 +69,7 @@ const mockHives = [
   },
   {
     id: "hive-6",
-    name: "City Rooftop",
+    name: "Hive 6",
     location: "Urban Garden",
     lastReading: "18 minutes ago",
     swarmRisk: "medium" as const,

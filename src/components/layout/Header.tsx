@@ -92,7 +92,6 @@ export function Header() {
               </>
             ) : (
               <>
-                <ThemeToggle />
                 <Button 
                   variant="ghost" 
                   size="icon"
