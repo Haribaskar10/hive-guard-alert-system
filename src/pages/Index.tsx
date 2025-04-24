@@ -170,7 +170,7 @@ export default function Index() {
         </div>
       </section>
       
-      {/* Testimonials */}
+      {/* Testimonials Section */}
       <section className="py-20 md:py-32">
         <div className="container px-4 md:px-6">
           <div className="text-center mb-16">
@@ -186,48 +186,48 @@ export default function Index() {
             <div className="p-6 bg-card rounded-xl border shadow-sm">
               <div className="flex items-center mb-4">
                 <div className="mr-4 h-12 w-12 rounded-full bg-accent flex items-center justify-center">
-                  <span className="font-bold">JD</span>
+                  <span className="font-bold">RK</span>
                 </div>
                 <div>
-                  <p className="font-medium">John Doe</p>
-                  <p className="text-sm text-muted-foreground">Professional Beekeeper</p>
+                  <p className="font-medium">Rajesh Kumar</p>
+                  <p className="text-sm text-muted-foreground">Professional Beekeeper, Tamil Nadu</p>
                 </div>
               </div>
               <p className="text-muted-foreground">
-                "BeePulse has been a game-changer for my apiary. I've prevented at least 5 swarms
-                this season alone thanks to the early alerts. Well worth the investment."
+                "BeePulse has transformed my apiary management. The early warning system helped me prevent
+                multiple swarms this season. It's an invaluable tool for modern beekeeping."
               </p>
             </div>
             
             <div className="p-6 bg-card rounded-xl border shadow-sm">
               <div className="flex items-center mb-4">
                 <div className="mr-4 h-12 w-12 rounded-full bg-accent flex items-center justify-center">
-                  <span className="font-bold">AS</span>
+                  <span className="font-bold">SP</span>
                 </div>
                 <div>
-                  <p className="font-medium">Alice Smith</p>
-                  <p className="text-sm text-muted-foreground">Hobby Beekeeper</p>
+                  <p className="font-medium">Santhosh Patel</p>
+                  <p className="text-sm text-muted-foreground">Hobby Beekeeper, Tamil Nadu</p>
                 </div>
               </div>
               <p className="text-muted-foreground">
-                "As a new beekeeper, I was worried about missing the signs of swarming. BeePulse
-                has given me confidence by alerting me before any issues arise."
+                "As a new beekeeper in Tamil Nadu, BeePulse has given me the confidence to manage my hives
+                effectively. The alerts are timely and accurate."
               </p>
             </div>
             
             <div className="p-6 bg-card rounded-xl border shadow-sm">
               <div className="flex items-center mb-4">
                 <div className="mr-4 h-12 w-12 rounded-full bg-accent flex items-center justify-center">
-                  <span className="font-bold">MJ</span>
+                  <span className="font-bold">VR</span>
                 </div>
                 <div>
-                  <p className="font-medium">Mark Johnson</p>
-                  <p className="text-sm text-muted-foreground">Commercial Apiary Owner</p>
+                  <p className="font-medium">Vijay Rajan</p>
+                  <p className="text-sm text-muted-foreground">Commercial Apiary Owner, Tamil Nadu</p>
                 </div>
               </div>
               <p className="text-muted-foreground">
-                "We've integrated BeePulse across our 50+ hives. The data insights and swarm
-                predictions have improved our operations and reduced colony losses by 70%."
+                "We've implemented BeePulse across our 50+ hives in Tamil Nadu. The system has helped us
+                reduce colony losses significantly and improve our honey production."
               </p>
             </div>
           </div>

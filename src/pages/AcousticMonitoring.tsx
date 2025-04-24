@@ -1,4 +1,3 @@
-
 import { DashboardLayout } from "@/components/layout/DashboardLayout";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Headphones, Mic, AudioWaveform, Volume2, Speaker } from "lucide-react";
@@ -31,8 +30,8 @@ export default function AcousticMonitoring() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="space-y-4">
                   <img 
-                    src="/placeholder.svg" 
-                    alt="Acoustic monitoring sensor" 
+                    src="/lovable-uploads/9f4c4a39-04da-4fa8-8c3c-f7db96943b70.png" 
+                    alt="BeePulse acoustic monitoring system" 
                     className="rounded-lg w-full h-64 object-cover"
                   />
                   <p>

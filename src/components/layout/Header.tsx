@@ -1,4 +1,3 @@
-
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Bell, LogOut, Settings, User } from "lucide-react";
@@ -59,7 +58,7 @@ export function Header() {
           </Link>
         </div>
 
-        <nav className="flex-1 flex items-center justify-center">
+        <div className="flex-1 flex items-center justify-end gap-6">
           {isLoggedIn && (
             <div className="hidden md:flex items-center gap-6">
               <Link to="/dashboard" className="text-sm font-medium hover:text-honey-600 transition-colors">
@@ -76,84 +75,84 @@ export function Header() {
               </Link>
             </div>
           )}
-        </nav>
 
-        <div className="flex items-center gap-2">
-          {!isLoggedIn ? (
-            <>
-              <ThemeToggle />
-              <Button variant="ghost" asChild>
-                <Link to="/login">Log in</Link>
-              </Button>
-              <Button 
-                asChild
-                className="bg-gradient-to-r from-[#FFB800] to-[#FFD338] text-black hover:opacity-90"
-              >
-                <Link to="/signup">Sign up</Link>
-              </Button>
-            </>
-          ) : (
-            <>
-              <ThemeToggle />
-              <Button 
-                variant="ghost" 
-                size="icon"
-                className="relative"
-                aria-label="Notifications"
-                title="Notifications"
-              >
-                <Link to="/notifications">
-                  <Bell className="h-5 w-5" />
-                  <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
-                </Link>
-              </Button>
-              
-              <Link to="/settings">
+          <div className="flex items-center gap-2">
+            <ThemeToggle />
+            {!isLoggedIn ? (
+              <>
+                <Button variant="ghost" asChild>
+                  <Link to="/login">Log in</Link>
+                </Button>
+                <Button 
+                  asChild
+                  className="bg-gradient-to-r from-[#FFB800] to-[#FFD338] text-black hover:opacity-90"
+                >
+                  <Link to="/signup">Sign up</Link>
+                </Button>
+              </>
+            ) : (
+              <>
+                <ThemeToggle />
                 <Button 
                   variant="ghost" 
                   size="icon"
-                  aria-label="Settings"
-                  title="Settings"
+                  className="relative"
+                  aria-label="Notifications"
+                  title="Notifications"
                 >
-                  <Settings className="h-5 w-5" />
+                  <Link to="/notifications">
+                    <Bell className="h-5 w-5" />
+                    <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
+                  </Link>
                 </Button>
-              </Link>
-              
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
+                
+                <Link to="/settings">
                   <Button 
                     variant="ghost" 
-                    size="icon" 
-                    className="rounded-full"
+                    size="icon"
+                    aria-label="Settings"
+                    title="Settings"
                   >
-                    <User className="h-5 w-5" />
+                    <Settings className="h-5 w-5" />
                   </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent align="end">
-                  <DropdownMenuLabel>
-                    {userData?.name || "My Account"}
-                    {userData?.email && (
-                      <p className="text-xs text-muted-foreground">{userData.email}</p>
-                    )}
-                  </DropdownMenuLabel>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuItem asChild>
-                    <Link to="/dashboard">Dashboard</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link to="/settings">Settings</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link to="/support">Support</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuItem onClick={handleLogout}>
-                    <LogOut className="h-4 w-4 mr-2" /> Logout
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
-            </>
-          )}
+                </Link>
+                
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button 
+                      variant="ghost" 
+                      size="icon" 
+                      className="rounded-full"
+                    >
+                      <User className="h-5 w-5" />
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="end">
+                    <DropdownMenuLabel>
+                      {userData?.name || "My Account"}
+                      {userData?.email && (
+                        <p className="text-xs text-muted-foreground">{userData.email}</p>
+                      )}
+                    </DropdownMenuLabel>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem asChild>
+                      <Link to="/dashboard">Dashboard</Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link to="/settings">Settings</Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link to="/support">Support</Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem onClick={handleLogout}>
+                      <LogOut className="h-4 w-4 mr-2" /> Logout
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              </>
+            )}
+          </div>
         </div>
       </div>
     </header>
